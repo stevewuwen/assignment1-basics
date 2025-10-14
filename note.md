@@ -435,3 +435,4 @@ newest newest newest newest newest newest
         3.  `w`+`est` -\> `west`=\> `n e west`
         4.  `n`+`e` -\> `ne`  =\> `ne west`
       * 最终，`"newest"` 被分词为 `['ne', 'west']`。
+
