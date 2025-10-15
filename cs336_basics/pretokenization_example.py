@@ -10,6 +10,7 @@ def find_chunk_boundaries(
     """
     Chunk the file into parts that can be counted independently.
     May return fewer chunks if the boundaries end up overlapping.
+    将文件分成可以独立计数的部分。如果边界最终重叠，可能会返回更少的块。
     """
     assert isinstance(split_special_token, bytes), "Must represent special token as a bytestring"
 
