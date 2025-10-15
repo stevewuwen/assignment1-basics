@@ -37,4 +37,3 @@ def tokenzier_bpe_trainer(
     """
     # 读取
     raise NotImplementedError
-    
