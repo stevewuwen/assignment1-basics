@@ -9,6 +9,7 @@ import torch
 from jaxtyping import Bool, Float, Int
 from torch import Tensor
 
+from cs336_basics import tokenizer
 
 def run_linear(
     d_in: int,
@@ -557,7 +558,7 @@ def get_tokenizer(
             be split into multiple tokens, and will always be kept as a single token.
 
     Returns:
-        A BPE tokenizer that uses the provided vocab, merges, and special tokens.
+        A BPE tokenizer that uses the provided vocab, merges, and special tokens. 需要提供encode和decode方法
     """
     raise NotImplementedError
 
@@ -589,4 +590,5 @@ def run_train_bpe(
                 representing that <token1> was merged with <token2>.
                 Merges are ordered by order of creation.
     """
+    return tokenizer.tokenzier_bpe_trainer(input_path=input_path, vocab_size=vocab_size, special_tokens=special_tokens)
     raise NotImplementedError

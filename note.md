@@ -436,3 +436,20 @@ newest newest newest newest newest newest
         4.  `n`+`e` -\> `ne`  =\> `ne west`
       * 最终，`"newest"` 被分词为 `['ne', 'west']`。
 
+### 使用方法
+
+最终tokenizer训练完成后会有三个东西，分别是：
+1. vocab: 一个字典，把input id转化为字节的，也可以把字节转化为input id
+2. merges: 一个列表，包含着每一个字节的合并规则，是用来创造input_id
+
+#### sequence->input ids（编码）
+
+1. 输入sequence，将根据utf-8编码为普通字节
+2. 将每个字节应用于merges进行合并
+3. 将合并后的的字节转化为input id
+
+#### input ids -> bytes（解码）
+
+1. 根据vocab，将 input_ids 转化为字节字符串
+2. 拼接所有字节字符串，得到完整的utf-8字节序列，在解码为原始文本
+
